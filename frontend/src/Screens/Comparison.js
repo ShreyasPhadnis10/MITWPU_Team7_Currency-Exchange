@@ -63,6 +63,7 @@ export default function Comparison() {
   const [chartData, setChartData] = useState(null); // State to store the data fetched from the backend
   const [loading, setLoading] = useState(false); // Loading state
   const [error, setError] = useState(null); // Error state
+  const [selectedDuration, setSelectedDuration] = useState("1W"); // Default selected duration
   const scrollRef = useRef(null); // Reference to the scrollable container
 
   // Scroll left
@@ -86,9 +87,11 @@ export default function Comparison() {
     setError(null); // Reset error state
 
     try {
-      // Replace with your backend API endpoint
+      // Replace with your backend API endpoint using the selected duration
       const response = await axios.get(
-        `http://127.0.0.1:8000/weekly?currency=${encodeURIComponent(currency)}`
+        `http://127.0.0.1:8000/${selectedDuration.toLowerCase()}?currency=${encodeURIComponent(
+          currency
+        )}`
       );
 
       // Pass the correct data part from the response
@@ -99,6 +102,11 @@ export default function Comparison() {
     } finally {
       setLoading(false); // Set loading to false after fetching
     }
+  };
+
+  // Function to handle duration selection
+  const handleDurationClick = (duration) => {
+    setSelectedDuration(duration); // Update the selected duration
   };
 
   return (
@@ -161,6 +169,38 @@ export default function Comparison() {
         </button>
       </div>
 
+      {/* Buttons for time range selection */}
+      <div
+        style={{ marginTop: "20px", display: "flex", justifyContent: "center" }}
+      >
+        {[
+          "weekly",
+          "monthly",
+          "quarterly",
+          "yearly",
+          "two-year",
+          "five-year",
+        ].map((label) => (
+          <button
+            key={label}
+            onClick={() => handleDurationClick(label)} // Update duration on click
+            style={{
+              cursor: "pointer",
+              background: selectedDuration === label ? "lightgreen" : "none", // Change background for selected
+              border: "none",
+              outline: "none",
+              fontSize: "18px",
+              fontWeight: "bold",
+              fontFamily: "Poppins, sans-serif",
+              margin: "20px 10px", // Add some space between buttons
+              padding: "10px 20px", // Add padding for better visuals
+              borderRadius: "5px", // Slight rounding of corners
+            }}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
       {/* Render Charts component below the buttons */}
       {selectedCountry && (
         <div
