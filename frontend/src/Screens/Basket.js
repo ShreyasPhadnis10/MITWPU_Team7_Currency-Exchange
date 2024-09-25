@@ -120,16 +120,15 @@ export default function Basket() {
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.title}>Currency Basket</h1>
-      <button style={styles.fetchButton} onClick={fetchCurrencyData}>
-        Fetch Currency Data
-      </button>
       {error && <p style={styles.error}>{error}</p>}
 
       <div style={styles.inputsContainer}>
         <div style={styles.leftInputsContainer}>
           {leftInputs.map((input, index) => (
             <div key={index} style={styles.inputGroup}>
+              <button style={styles.addButton} onClick={addLeftInput}>
+                +
+              </button>
               <select
                 value={input.currency}
                 onChange={(e) =>
@@ -155,9 +154,6 @@ export default function Basket() {
               />
             </div>
           ))}
-          <button style={styles.addButton} onClick={addLeftInput}>
-            +
-          </button>
         </div>
 
         <div style={styles.rightInputContainer}>
@@ -175,7 +171,9 @@ export default function Basket() {
           </select>
         </div>
       </div>
-
+      <button style={styles.fetchButton} onClick={fetchCurrencyData}>
+        Fetch Currency Data
+      </button>
       {currencyData && (
         <div style={styles.currencyDataContainer}>
           <h2 style={styles.subTitle}>Latest Currency Data:</h2>
@@ -209,9 +207,7 @@ const styles = {
     marginLeft: "40",
     marginRight: "40",
     padding: "20px",
-    backgroundColor: "#f9f9f9",
     borderRadius: "8px",
-    boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
   },
   title: {
     textAlign: "center",
@@ -219,7 +215,7 @@ const styles = {
   },
   fetchButton: {
     display: "block",
-    backgroundColor: "#007BFF",
+    backgroundColor: "#9cadce",
     color: "white",
     border: "none",
     padding: "10px 20px",
@@ -234,17 +230,17 @@ const styles = {
   },
   inputsContainer: {
     display: "flex",
-    justifyContent: "space-between",
-
+    justifyContent: "center", // Center the input sections
     margin: "20px 0",
   },
   leftInputsContainer: {
     display: "flex",
     flexDirection: "column",
+    flex: 1,
+    marginRight: "10px",
   },
   rightInputContainer: {
     flex: 1,
-    textAlign: "center",
   },
   inputGroup: {
     display: "flex",
@@ -252,38 +248,33 @@ const styles = {
     marginBottom: "10px",
   },
   selectInput: {
-    padding: "8px",
-    borderRadius: "4px",
-    border: "1px solid #ccc",
+    flex: 1,
     marginRight: "5px",
-    width: 400,
+    padding: "10px",
   },
   percentageInput: {
-    width: "80px",
-    padding: "8px",
-    borderRadius: "4px",
-    border: "1px solid #ccc",
+    flex: 1,
+    marginRight: "5px",
+    padding: "10px",
   },
   addButton: {
-    backgroundColor: "#28a745",
+    backgroundColor: "#28A745",
     color: "white",
-    height: 40,
-    width: 80,
     border: "none",
-    padding: "5px 10px",
-
+    padding: "10px",
+    borderRadius: "5px",
     cursor: "pointer",
-    marginTop: "10px",
+    marginRight: "5px",
   },
   currencyDataContainer: {
-    backgroundColor: "#fff",
-    padding: "20px",
-    borderRadius: "8px",
-    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
     marginTop: "20px",
+    border: "1px solid #ddd",
+    borderRadius: "5px",
+    padding: "10px",
+    backgroundColor: "#f9f9f9",
   },
   subTitle: {
-    fontSize: "18px",
+    textAlign: "center",
     color: "#333",
   },
   currencyRow: {
