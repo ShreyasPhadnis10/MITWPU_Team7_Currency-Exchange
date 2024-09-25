@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import TinyFlag from "tiny-flag-react";
 import Countries from "../Components/Countries";
+import Charts from "../Components/Charts"; // Import Charts component
 
 // Sample list of currencies with their corresponding country codes
 const currencyCountryMap = [
@@ -87,62 +88,78 @@ export default function Comparison() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        paddingLeft: 20,
-        paddingRight: 20,
-      }}
-    >
-      <button
-        onClick={scrollLeft}
-        style={{
-          cursor: "pointer",
-          background: "none",
-          border: "none",
-          outline: "none",
-          fontSize: 25,
-          fontWeight: "bolder",
-        }}
-      >
-        {"<"}
-      </button>
+    <div>
       <div
-        ref={scrollRef}
         style={{
           display: "flex",
           alignItems: "center",
-          fontSize: "20px",
-          overflowX: "hidden", // Hides the scrollbar
-          maxWidth: "100%", // Ensures it doesn't exceed the screen width
-          padding: "10px",
-          whiteSpace: "nowrap", // Prevents wrapping
+          paddingLeft: 20,
+          paddingRight: 20,
         }}
       >
-        {currencyCountryMap.map(({ currency, country }) => (
-          <Countries
-            name={currency}
-            key={currency}
-            flag={country}
-            isSelected={selectedCountries.includes(currency)}
-            onClick={() => handleCountryClick(currency)} // Pass click handler
-          />
-        ))}
+        <button
+          onClick={scrollLeft}
+          style={{
+            cursor: "pointer",
+            background: "none",
+            border: "none",
+            outline: "none",
+            fontSize: 25,
+            fontWeight: "bolder",
+          }}
+        >
+          {"<"}
+        </button>
+        <div
+          ref={scrollRef}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            fontSize: "20px",
+            overflowX: "hidden", // Hides the scrollbar
+            maxWidth: "100%", // Ensures it doesn't exceed the screen width
+            padding: "10px",
+            whiteSpace: "nowrap", // Prevents wrapping
+          }}
+        >
+          {currencyCountryMap.map(({ currency, country }) => (
+            <Countries
+              name={currency}
+              key={currency}
+              flag={country}
+              isSelected={selectedCountries.includes(currency)}
+              onClick={() => handleCountryClick(currency)} // Pass click handler
+            />
+          ))}
+        </div>
+        <button
+          onClick={scrollRight}
+          style={{
+            cursor: "pointer",
+            background: "none",
+            border: "none",
+            outline: "none",
+            fontSize: 25,
+            fontWeight: "bolder",
+          }}
+        >
+          {">"}
+        </button>
       </div>
-      <button
-        onClick={scrollRight}
-        style={{
-          cursor: "pointer",
-          background: "none",
-          border: "none",
-          outline: "none",
-          fontSize: 25,
-          fontWeight: "bolder",
-        }}
-      >
-        {">"}
-      </button>
+
+      {/* Render Charts component below the buttons */}
+      {selectedCountries.length > 0 && (
+        <div
+          style={{
+            marginTop: "20px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Charts /> {/* Show chart for the first selected currency */}
+        </div>
+      )}
     </div>
   );
 }

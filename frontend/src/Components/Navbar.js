@@ -1,13 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link
 import Stylesheet from "reactjs-stylesheet";
+
 export default function Navbar() {
   return (
     <div style={styles.container}>
       <div style={styles.navbarBtn}>
-        <span style={styles.btn}>Comparison</span>
-        <span style={styles.btn}>Basket</span>
-        <span style={styles.btn}>Tabular</span>
-        <span style={styles.btn}>Conversion</span>
+        <Link to="/" style={styles.btn}>
+          Comparison
+        </Link>
+        <Link to="/basket" style={styles.btn}>
+          Basket
+        </Link>
+        <Link to="/conversion" style={styles.btn}>
+          Conversion
+        </Link>
+
         <span style={styles.btn}>Predict</span>
       </div>
     </div>
@@ -19,7 +27,6 @@ const styles = Stylesheet.create({
     fontFamily: "Poppins",
     height: "15%",
     width: "100%",
-
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -31,10 +38,11 @@ const styles = Stylesheet.create({
     justifyContent: "space-around",
     alignItems: "center",
   },
-
   btn: {
     fontSize: 18,
     fontWeight: "bold",
     cursor: "pointer",
+    textDecoration: "none", // Remove underline for Link
+    color: "inherit", // Use inherited color for the link
   },
 });

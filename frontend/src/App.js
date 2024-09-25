@@ -1,14 +1,26 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Import Routes instead of Switch
 import Stylesheet from "reactjs-stylesheet";
 import Comparison from "./Screens/Comparison";
 import Navbar from "./Components/Navbar";
+import Basket from "./Screens/Basket"; // Import Basket component
+import Conversion from "./Screens/Conversion";
 
 function App() {
   return (
-    <div style={styles.container}>
-      <Navbar />
+    <Router>
+      <div style={styles.container}>
+        <Navbar />
 
-      <Comparison />
-    </div>
+        <Routes>
+          {" "}
+          {/* Use Routes instead of Switch */}
+          <Route path="/" element={<Comparison />} /> {/* Default route */}
+          <Route path="/basket" element={<Basket />} /> {/* Route for Basket */}
+          <Route path="/conversion" element={<Conversion />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
