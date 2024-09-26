@@ -19,6 +19,9 @@ export default function Navbar() {
         <Link to="/optional" style={styles.btn}>
           Datewise
         </Link>
+        <Link to="/optional2" style={styles.btn}>
+          Datewise_comparison
+        </Link>
       </div>
     </div>
   );

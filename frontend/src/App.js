@@ -6,6 +6,7 @@ import Navbar from "./Components/Navbar";
 import Basket from "./Screens/Basket"; // Import Basket component
 import Conversion from "./Screens/Conversion";
 import DateWisePrice from "./Screens/DateWisePrice";
+import DatewiseBarchart from "./Screens/DatewiseBarchart";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/basket" element={<Basket />} /> {/* Route for Basket */}
           <Route path="/conversion" element={<Conversion />} />
           <Route path="/optional" element={<DateWisePrice />} />
+          <Route path="/optional2" element={<DatewiseBarchart />} />
         </Routes>
       </div>
     </Router>
