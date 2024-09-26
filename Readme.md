@@ -42,11 +42,11 @@ This project is a comprehensive currency exchange dashboard that allows users to
 ---
 
 ### Team Members
--**Shreyas Phadnis** 
--**Sahil Choudhary** 
+- **Shreyas Phadnis** 
+- **Sahil Choudhary** 
 - **Shravya Dsouza**  
 - **Prathamesh Keskar** 
--**Saket Sontakke**
+- **Saket Sontakke**
   
 ---
 
