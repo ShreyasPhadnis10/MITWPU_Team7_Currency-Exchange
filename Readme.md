@@ -8,7 +8,7 @@ This project is a comprehensive currency exchange dashboard that allows users to
 - [X] **Create a user interface** that allows users to:
   - [X] Select a currency
   - [x] Select the desired duration (weekly, monthly, quarterly, annual charts)
-  - [ ] Switch between different time frames on the charts
+  - [X] Switch between different time frames on the charts
 - [x] **Fetch data** for the given currency and time duration
   - [x] Show the trend over the given period
   - [x] Display the date and rate when the currency was at its highest
@@ -24,7 +24,7 @@ This project is a comprehensive currency exchange dashboard that allows users to
 ## Optional Tasks
 
 - [X] **Currency Conversion Service/Component**: 
-  - [ ] Provide FX rates for all currencies based on a selected base currency
+  - [X] Provide FX rates for all currencies based on a selected base currency
 - [X] **UI Screen**: 
   - [X] Display all currencies along with their short code, description, and current exchange rate against USD
 - [X] **Automate Uploading**: 
