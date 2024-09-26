@@ -80,8 +80,8 @@ HeatMap
 ---
 
 ## Extra Task
- Pre-processing of Dataset for the year 2023-24. Data Source : IMF
- Implemented AI/ML RNN model to Predict Currency Exchange with Mean Square Error of 0.1119 on INR prediction
+ - Pre-processing of Dataset for the year 2023-24. Data Source : IMF
+ - Implemented AI/ML RNN model to Predict Currency Exchange with Mean Square Error of 0.1119 on INR prediction
  ![WhatsApp Image 2024-09-25 at 23 35 17](https://github.com/user-attachments/assets/01b15db2-292d-4069-87fe-2630d4724e5a)
  ![WhatsApp Image 2024-09-25 at 23 35 24](https://github.com/user-attachments/assets/ac03b847-386b-4ce3-b39f-99e7895825ee)
 
