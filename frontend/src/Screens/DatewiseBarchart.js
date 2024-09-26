@@ -9,17 +9,19 @@ import {
 } from "chart.js";
 import currencyCountryMap from "../Data/CurrencyCountryMap";
 const apiKey = process.env.REACT_APP_API_KEY;
+
 // Register the required Chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
 
 export default function DatewiseBarchart() {
   const [baseCurrency, setBaseCurrency] = useState("USD"); // Default base currency
+  const [date, setDate] = useState("2022-01-01"); // Default date
   const [data, setData] = useState([]);
 
   const fetchCurrencyData = async () => {
     try {
       const response = await fetch(
-        `https://api.currencyapi.com/v3/historical?date=2022-01-01&base_currency=${baseCurrency}`,
+        `https://api.currencyapi.com/v3/historical?date=${date}&base_currency=${baseCurrency}`,
         {
           headers: {
             apikey: apiKey, // Replace with your actual API key
@@ -48,7 +50,6 @@ export default function DatewiseBarchart() {
           .sort((a, b) => b.value - a.value)
           .slice(0, 10);
         setData(topCurrencies);
-        console.log(data);
       } else {
         console.error("Data is not available or not an object", result);
         setData([]); // Set data to an empty array if data is not available
@@ -60,7 +61,7 @@ export default function DatewiseBarchart() {
 
   useEffect(() => {
     fetchCurrencyData();
-  }, [baseCurrency]);
+  }, [baseCurrency, date]); // Fetch data when baseCurrency or date changes
 
   // Prepare data for the bar chart
   const chartData = {
@@ -83,6 +84,20 @@ export default function DatewiseBarchart() {
         placeholder="Enter base currency (default: USD)"
         value={baseCurrency}
         onChange={(e) => setBaseCurrency(e.target.value.toUpperCase())}
+        style={{
+          padding: "10px",
+          margin: "10px",
+          borderRadius: "5px",
+          border: "1px solid #ccc",
+          fontFamily: "Poppins, sans-serif",
+          width: "300px",
+        }}
+      />
+
+      <input
+        type="date"
+        value={date}
+        onChange={(e) => setDate(e.target.value)}
         style={{
           padding: "10px",
           margin: "10px",
