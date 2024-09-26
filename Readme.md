@@ -25,8 +25,8 @@ This project is a comprehensive currency exchange dashboard that allows users to
 
 - [X] **Currency Conversion Service/Component**: 
   - [ ] Provide FX rates for all currencies based on a selected base currency
-- [ ] **UI Screen**: 
-  - [ ] Display all currencies along with their short code, description, and current exchange rate against USD
+- [X] **UI Screen**: 
+  - [X] Display all currencies along with their short code, description, and current exchange rate against USD
 - [X] **Automate Uploading**: 
   - [X] Automate the process of uploading exchange rate data into the database
 
