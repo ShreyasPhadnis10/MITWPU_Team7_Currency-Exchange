@@ -30,13 +30,6 @@ This project is a comprehensive currency exchange dashboard that allows users to
 - [X] **Automate Uploading**: 
   - [X] Automate the process of uploading exchange rate data into the database
 
-
-## Extra Task
- Pre-processing of Dataset for the year 2023-24. Data Source : IMF
- Implemented AI/ML RNN model to Predict Currency Exchange with Mean Square Error of 0.0899
- ![WhatsApp Image 2024-09-25 at 23 35 17](https://github.com/user-attachments/assets/01b15db2-292d-4069-87fe-2630d4724e5a)
- ![WhatsApp Image 2024-09-25 at 23 35 24](https://github.com/user-attachments/assets/ac03b847-386b-4ce3-b39f-99e7895825ee)
-
 ---
 
 ### Technologies Used
@@ -78,10 +71,19 @@ According to the entered date , the currency exchange values are displayed
 Comparision Chart
 ![WhatsApp Image 2024-09-26 at 10 48 58](https://github.com/user-attachments/assets/ac3b63ec-379d-4b8e-a4c5-39cf771315f9)
 
+---
+
 ### Additional Implementation
+HeatMap 
+![Heatmap](https://github.com/user-attachments/assets/3a794456-9e3f-4294-a469-fa8624ac4191)
 
+---
 
-
+## Extra Task
+ Pre-processing of Dataset for the year 2023-24. Data Source : IMF
+ Implemented AI/ML RNN model to Predict Currency Exchange with Mean Square Error of 0.1119 on INR prediction
+ ![WhatsApp Image 2024-09-25 at 23 35 17](https://github.com/user-attachments/assets/01b15db2-292d-4069-87fe-2630d4724e5a)
+ ![WhatsApp Image 2024-09-25 at 23 35 24](https://github.com/user-attachments/assets/ac03b847-386b-4ce3-b39f-99e7895825ee)
 
 
 
