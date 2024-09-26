@@ -16,7 +16,9 @@ export default function Navbar() {
           Conversion
         </Link>
 
-        <span style={styles.btn}>Predict</span>
+        <Link to="/optional" style={styles.btn}>
+          Datewise
+        </Link>
       </div>
     </div>
   );

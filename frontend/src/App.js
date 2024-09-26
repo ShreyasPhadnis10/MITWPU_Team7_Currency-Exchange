@@ -5,6 +5,7 @@ import Comparison from "./Screens/Comparison";
 import Navbar from "./Components/Navbar";
 import Basket from "./Screens/Basket"; // Import Basket component
 import Conversion from "./Screens/Conversion";
+import DateWisePrice from "./Screens/DateWisePrice";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Comparison />} /> {/* Default route */}
           <Route path="/basket" element={<Basket />} /> {/* Route for Basket */}
           <Route path="/conversion" element={<Conversion />} />
+          <Route path="/optional" element={<DateWisePrice />} />
         </Routes>
       </div>
     </Router>
