@@ -96,7 +96,6 @@ export default function Comparison() {
 
       // Pass the correct data part from the response
       setChartData(response.data.data);
-      console.log(response.data.data); // Updated to check the actual data
     } catch (err) {
       setError("Failed to load chart data"); // Handle error
     } finally {
@@ -108,6 +107,18 @@ export default function Comparison() {
   const handleDurationClick = (duration) => {
     setSelectedDuration(duration); // Update the selected duration
   };
+
+  // Calculate max and min values from chartData if available
+  const calculateMinMax = (data) => {
+    const values = data.map((item) => item[selectedCountry]); // Extract values for the selected currency
+    const max = Math.max(...values);
+    const min = Math.min(...values);
+    return { max, min };
+  };
+
+  const { max, min } = chartData
+    ? calculateMinMax(chartData)
+    : { max: null, min: null };
 
   return (
     <div>
@@ -209,6 +220,7 @@ export default function Comparison() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            flexDirection: "column", // Stack the chart and min/max values
           }}
         >
           {loading ? (
@@ -217,7 +229,22 @@ export default function Comparison() {
             <p>{error}</p>
           ) : (
             chartData && (
-              <Charts selectedCurrency={selectedCountry} data={chartData} />
+              <>
+                <Charts selectedCurrency={selectedCountry} data={chartData} />
+                <div
+                  style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: "bolder",
+                  }}
+                >
+                  <span style={{ color: "green", marginRight: "30px" }}>
+                    Max: {max !== null ? max : "N/A"}
+                  </span>
+                  <span style={{ color: "red" }}>
+                    Min: {min !== null ? min : "N/A"}
+                  </span>
+                </div>
+              </>
             ) // Pass the fetched data to Charts
           )}
         </div>

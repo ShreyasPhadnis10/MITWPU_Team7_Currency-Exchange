@@ -3,57 +3,57 @@ import currencyapi from "@everapi/currencyapi-js";
 
 // Currency and country mapping
 const currencyCountryMap = [
-  { currency: "DZD", country: "DZ" },
-  { currency: "AUD", country: "AU" },
-  { currency: "BHD", country: "BH" },
-  { currency: "VEF", country: "VE" },
-  { currency: "BWP", country: "BW" },
-  { currency: "BRL", country: "BR" },
-  { currency: "BND", country: "BN" },
-  { currency: "CAD", country: "CA" },
-  { currency: "CLP", country: "CL" },
-  { currency: "CNY", country: "CN" },
-  { currency: "COP", country: "CO" },
-  { currency: "CZK", country: "CZ" },
-  { currency: "DKK", country: "DK" },
-  { currency: "EUR", country: "EU" },
-  { currency: "HUF", country: "HU" },
-  { currency: "ISK", country: "IS" },
-  { currency: "INR", country: "IN" },
-  { currency: "IDR", country: "ID" },
-  { currency: "IRR", country: "IR" },
-  { currency: "ILS", country: "IL" },
-  { currency: "JPY", country: "JP" },
-  { currency: "KZT", country: "KZ" },
-  { currency: "KRW", country: "KR" },
-  { currency: "KWD", country: "KW" },
-  { currency: "LYD", country: "LY" },
-  { currency: "MYR", country: "MY" },
-  { currency: "MUR", country: "MU" },
-  { currency: "MXN", country: "MX" },
-  { currency: "NPR", country: "NP" },
-  { currency: "NZD", country: "NZ" },
-  { currency: "NOK", country: "NO" },
-  { currency: "OMR", country: "OM" },
-  { currency: "PKR", country: "PK" },
-  { currency: "PEN", country: "PE" },
-  { currency: "PHP", country: "PH" },
-  { currency: "PLN", country: "PL" },
-  { currency: "QAR", country: "QA" },
-  { currency: "RUB", country: "RU" },
-  { currency: "SAR", country: "SA" },
-  { currency: "SGD", country: "SG" },
-  { currency: "ZAR", country: "ZA" },
-  { currency: "LKR", country: "LK" },
-  { currency: "SEK", country: "SE" },
-  { currency: "CHF", country: "CH" },
-  { currency: "THB", country: "TH" },
-  { currency: "TTD", country: "TT" },
-  { currency: "TND", country: "TN" },
-  { currency: "AED", country: "AE" },
-  { currency: "GBP", country: "GB" },
-  { currency: "USD", country: "US" },
-  { currency: "UYU", country: "UY" },
+  { currency: "DZD", country: "DZ", name: "Algerian dinar (DZD)" },
+  { currency: "AUD", country: "AU", name: "Australian dollar (AUD)" },
+  { currency: "BHD", country: "BH", name: "Bahrain dinar (BHD)" },
+  { currency: "VEF", country: "VE", name: "Bolivar Fuerte (VEF)" },
+  { currency: "BWP", country: "BW", name: "Botswana pula (BWP)" },
+  { currency: "BRL", country: "BR", name: "Brazilian real (BRL)" },
+  { currency: "BND", country: "BN", name: "Brunei dollar (BND)" },
+  { currency: "CAD", country: "CA", name: "Canadian dollar (CAD)" },
+  { currency: "CLP", country: "CL", name: "Chilean peso (CLP)" },
+  { currency: "CNY", country: "CN", name: "Chinese yuan (CNY)" },
+  { currency: "COP", country: "CO", name: "Colombian peso (COP)" },
+  { currency: "CZK", country: "CZ", name: "Czech koruna (CZK)" },
+  { currency: "DKK", country: "DK", name: "Danish krone (DKK)" },
+  { currency: "EUR", country: "EU", name: "Euro (EUR)" },
+  { currency: "HUF", country: "HU", name: "Hungarian forint (HUF)" },
+  { currency: "ISK", country: "IS", name: "Icelandic krona (ISK)" },
+  { currency: "INR", country: "IN", name: "Indian rupee (INR)" },
+  { currency: "IDR", country: "ID", name: "Indonesian rupiah (IDR)" },
+  { currency: "IRR", country: "IR", name: "Iranian rial (IRR)" },
+  { currency: "ILS", country: "IL", name: "Israeli New Shekel (ILS)" },
+  { currency: "JPY", country: "JP", name: "Japanese yen (JPY)" },
+  { currency: "KZT", country: "KZ", name: "Kazakhstani tenge (KZT)" },
+  { currency: "KRW", country: "KR", name: "Korean won (KRW)" },
+  { currency: "KWD", country: "KW", name: "Kuwaiti dinar (KWD)" },
+  { currency: "LYD", country: "LY", name: "Libyan dinar (LYD)" },
+  { currency: "MYR", country: "MY", name: "Malaysian ringgit (MYR)" },
+  { currency: "MUR", country: "MU", name: "Mauritian rupee (MUR)" },
+  { currency: "MXN", country: "MX", name: "Mexican peso (MXN)" },
+  { currency: "NPR", country: "NP", name: "Nepalese rupee (NPR)" },
+  { currency: "NZD", country: "NZ", name: "New Zealand dollar (NZD)" },
+  { currency: "NOK", country: "NO", name: "Norwegian krone (NOK)" },
+  { currency: "OMR", country: "OM", name: "Omani rial (OMR)" },
+  { currency: "PKR", country: "PK", name: "Pakistani rupee (PKR)" },
+  { currency: "PEN", country: "PE", name: "Peruvian sol (PEN)" },
+  { currency: "PHP", country: "PH", name: "Philippine peso (PHP)" },
+  { currency: "PLN", country: "PL", name: "Polish zloty (PLN)" },
+  { currency: "QAR", country: "QA", name: "Qatari riyal (QAR)" },
+  { currency: "RUB", country: "RU", name: "Russian ruble (RUB)" },
+  { currency: "SAR", country: "SA", name: "Saudi Arabian riyal (SAR)" },
+  { currency: "SGD", country: "SG", name: "Singapore dollar (SGD)" },
+  { currency: "ZAR", country: "ZA", name: "South African rand (ZAR)" },
+  { currency: "LKR", country: "LK", name: "Sri Lankan rupee (LKR)" },
+  { currency: "SEK", country: "SE", name: "Swedish krona (SEK)" },
+  { currency: "CHF", country: "CH", name: "Swiss franc (CHF)" },
+  { currency: "THB", country: "TH", name: "Thai baht (THB)" },
+  { currency: "TTD", country: "TT", name: "Trinidadian dollar (TTD)" },
+  { currency: "TND", country: "TN", name: "Tunisian dinar (TND)" },
+  { currency: "AED", country: "AE", name: "United Arab Emirates dirham (AED)" },
+  { currency: "GBP", country: "GB", name: "British pound (GBP)" },
+  { currency: "USD", country: "US", name: "United States dollar (USD)" },
+  { currency: "UYU", country: "UY", name: "Uruguayan peso (UYU)" },
 ];
 
 const apiKey = process.env.REACT_APP_API_KEY;
@@ -120,16 +120,16 @@ export default function Basket() {
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.title}>Currency Basket</h1>
-      <button style={styles.fetchButton} onClick={fetchCurrencyData}>
-        Fetch Currency Data
-      </button>
       {error && <p style={styles.error}>{error}</p>}
 
       <div style={styles.inputsContainer}>
         <div style={styles.leftInputsContainer}>
+          <h3 style={styles.label}>From</h3> {/* "From" Label */}
           {leftInputs.map((input, index) => (
             <div key={index} style={styles.inputGroup}>
+              <button style={styles.addButton} onClick={addLeftInput}>
+                +
+              </button>
               <select
                 value={input.currency}
                 onChange={(e) =>
@@ -140,7 +140,7 @@ export default function Basket() {
                 <option value="">Select Currency</option>
                 {currencyCountryMap.map((item) => (
                   <option key={item.currency} value={item.currency}>
-                    {item.currency}
+                    {item.name}
                   </option>
                 ))}
               </select>
@@ -155,12 +155,10 @@ export default function Basket() {
               />
             </div>
           ))}
-          <button style={styles.addButton} onClick={addLeftInput}>
-            +
-          </button>
         </div>
 
         <div style={styles.rightInputContainer}>
+          <h3 style={styles.label}>To</h3> {/* "To" Label */}
           <select
             value={rightInput}
             onChange={(e) => setRightInput(e.target.value)}
@@ -169,31 +167,39 @@ export default function Basket() {
             <option value="">Select Base Currency</option>
             {currencyCountryMap.map((item) => (
               <option key={item.currency} value={item.currency}>
-                {item.currency}
+                {item.name}
               </option>
             ))}
           </select>
         </div>
       </div>
-
+      <button style={styles.fetchButton} onClick={fetchCurrencyData}>
+        Fetch Currency Data
+      </button>
       {currencyData && (
         <div style={styles.currencyDataContainer}>
           <h2 style={styles.subTitle}>Latest Currency Data:</h2>
-          {Object.keys(currencyData.data).map((currencyCode) => (
-            <div key={currencyCode} style={styles.currencyRow}>
-              <p>
-                <strong>Currency Code:</strong> {currencyCode} <br />
-                <strong>Value (to {rightInput}):</strong>{" "}
-                {currencyData.data[currencyCode].value}
-              </p>
-            </div>
-          ))}
-          <p>
-            <strong>Total Basket Value in {rightInput}:</strong> {totalValue}
-          </p>
-          <p>
-            <strong>Last Updated:</strong> {currencyData.meta.last_updated_at}
-          </p>
+          <div style={styles.dataCardsContainer}>
+            {Object.keys(currencyData.data).map((currencyCode) => (
+              <div key={currencyCode} style={styles.currencyCard}>
+                <p style={styles.currencyText}>
+                  <strong>Currency Code:</strong> {currencyCode}
+                </p>
+                <p style={styles.currencyText}>
+                  <strong>Value (to {rightInput}):</strong>{" "}
+                  {currencyData.data[currencyCode].value}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div style={styles.summaryContainer}>
+            <p style={styles.summaryText}>
+              <strong>Total Basket Value in {rightInput}:</strong> {totalValue}
+            </p>
+            <p style={styles.summaryText}>
+              <strong>Last Updated:</strong> {currencyData.meta.last_updated_at}
+            </p>
+          </div>
         </div>
       )}
     </div>
@@ -201,92 +207,119 @@ export default function Basket() {
 }
 
 // Styles for the Basket component
+// Styles for the Basket component
 const styles = {
   container: {
     fontFamily: "Poppins",
     height: "100%",
-    width: "100vw",
-    marginLeft: "40",
-    marginRight: "40",
-    padding: "20px",
-    backgroundColor: "#f9f9f9",
-    borderRadius: "8px",
-    boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.1)",
+    width: "70%",
+    margin: "0 auto", // Center the container horizontally
+    padding: "20px", // Add some padding for better appearance
+    display: "flex", // Use flexbox for centering
+    flexDirection: "column", // Stack items vertically
+    alignItems: "center", // Center items horizontally
   },
   title: {
-    textAlign: "center",
-    color: "#333",
-  },
-  fetchButton: {
-    display: "block",
-    backgroundColor: "#007BFF",
-    color: "white",
-    border: "none",
-    padding: "10px 20px",
-    borderRadius: "5px",
-    cursor: "pointer",
-    fontSize: "16px",
-    margin: "10px auto",
-  },
-  error: {
-    color: "red",
-    textAlign: "center",
+    fontSize: "36px",
+    fontWeight: "bold",
+    marginBottom: "20px",
   },
   inputsContainer: {
     display: "flex",
-    justifyContent: "space-between",
-
-    margin: "20px 0",
+    justifyContent: "space-around", // Center inputs container
+    width: "100%", // Make it take full width
   },
   leftInputsContainer: {
-    display: "flex",
-    flexDirection: "column",
+    marginRight: "20px",
   },
   rightInputContainer: {
-    flex: 1,
-    textAlign: "center",
+    marginLeft: "20px",
   },
   inputGroup: {
     display: "flex",
     alignItems: "center",
     marginBottom: "10px",
   },
+  addButton: {
+    marginRight: "10px",
+    padding: "5px 10px",
+    fontSize: "18px",
+    cursor: "pointer",
+    borderRadius: "50%", // Rounded shape
+    border: "none",
+    backgroundColor: "#4CAF50", // Green background
+    color: "#fff", // White text
+    boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)", // Subtle shadow
+    transition: "background-color 0.3s ease, transform 0.2s ease",
+  },
   selectInput: {
-    padding: "8px",
-    borderRadius: "4px",
-    border: "1px solid #ccc",
-    marginRight: "5px",
+    height: 40,
     width: 400,
+    padding: "5px 10px",
+    marginRight: "10px",
+    border: "none",
+    borderRadius: "8px",
+    backgroundColor: "#f0f4f7",
+    boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+    color: "#333",
+    fontSize: "14px",
+    outline: "none",
+    transition: "background-color 0.3s ease",
+    fontFamily: "Poppins, sans-serif", // Change font family
+    fontWeight: "500", // Change font weight
   },
   percentageInput: {
-    width: "80px",
-    padding: "8px",
-    borderRadius: "4px",
-    border: "1px solid #ccc",
-  },
-  addButton: {
-    backgroundColor: "#28a745",
-    color: "white",
+    width: 90,
     height: 40,
-    width: 80,
-    border: "none",
-    padding: "5px 10px",
-
-    cursor: "pointer",
-    marginTop: "10px",
+    padding: "5px",
+    border: "1px solid #ccc",
+    borderRadius: "8px",
+    boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+    textAlign: "center",
+    fontFamily: "Poppins, sans-serif", // Font family
+    fontWeight: "500", // Font weight
+    transition: "border-color 0.3s ease, box-shadow 0.3s ease",
   },
   currencyDataContainer: {
-    backgroundColor: "#fff",
-    padding: "20px",
-    borderRadius: "8px",
-    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
-    marginTop: "20px",
-  },
-  subTitle: {
-    fontSize: "18px",
-    color: "#333",
+    textAlign: "center",
+    marginTop: "60px",
   },
   currencyRow: {
+    textAlign: "center",
+  },
+  fetchButton: {
+    marginTop: 50,
+    padding: "12px 24px", // Increase padding for a larger button
+    fontSize: "16px",
+    fontWeight: "bold",
+    color: "#fff",
+    backgroundColor: "#4caf50", // Green color for the button
+    border: "none",
+    borderRadius: "8px",
+    cursor: "pointer",
+    transition: "background-color 0.3s ease, transform 0.2s ease", // Smooth transition for background and scaling
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Light shadow for depth
+    outline: "none",
+    fontFamily: "Poppins, sans-serif",
+  },
+  fetchButtonHover: {
+    backgroundColor: "#45a049", // Slightly darker shade for hover effect
+    transform: "scale(1.05)", // Slight scaling on hover for a 'pop' effect
+  },
+  error: {
+    color: "red",
+    marginBottom: "10px",
+  },
+  subTitle: {
+    fontSize: "24px",
+    marginBottom: "10px",
+  },
+  label: {
+    display: "flex",
+    justifyContent: "flex-start",
+    fontSize: "20px",
+    fontWeight: "bold",
+    textAlign: "center",
     marginBottom: "10px",
   },
 };
